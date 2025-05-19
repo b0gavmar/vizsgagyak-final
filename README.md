@@ -1,2 +1,3 @@
-1. web: 25 perc
+elso web: 25 perc
 konzol: 32 perc
+desktop: 90 perc
