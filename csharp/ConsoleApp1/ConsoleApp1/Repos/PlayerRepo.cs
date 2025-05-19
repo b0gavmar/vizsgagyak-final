@@ -13,12 +13,25 @@ namespace ConsoleApp1.Repos
 
         public List<Player> GetNumberOfPlayersWithAmount()
         {
-            return _playersContext.Players.Where(p=>p.GetAmount() > 0).ToList();
+            return _playersContext.Players.Where(p=>p.Amount > 0).ToList();
         }
 
         public int GetSumOfAllAmount()
         {
-            return _playersContext.Players.Sum(p => p.GetAmount());
+            return _playersContext.Players.Sum(p => p.Amount);
+        }
+
+        public void AddPlayer(Player p)
+        {
+            if (!_playersContext.Players.Any(pl => pl.Id == p.Id))
+            {
+                _playersContext.Players.Add(p);
+                _playersContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Már van ilyen id");
+            }
         }
     }
 }
