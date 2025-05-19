@@ -1,0 +1,26 @@
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using ConsoleApp1.Repos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WpfApp1.ViewModels
+{
+    public partial class PlayerViewModel: ObservableObject
+    {
+        private readonly PlayerRepo _repo;
+
+        public PlayerViewModel(PlayerRepo repo)
+        {
+            _repo = repo;
+        }
+
+        public void Update()
+        {
+
+        }
+    }
+}
