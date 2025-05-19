@@ -37,6 +37,8 @@ public partial class PlayersContext : DbContext
                 .HasColumnType("INT")
                 .HasColumnName("id");
             entity.Property(e => e.Name).HasColumnName("name");
+
+            entity.HasKey(entity => entity.Id);
         });
 
         OnModelCreatingPartial(modelBuilder);
