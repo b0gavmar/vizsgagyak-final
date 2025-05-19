@@ -45,6 +45,11 @@ namespace ConsoleApp1.Repos
             }
         }
 
+        public int NextId()
+        {
+            return (int)_playersContext.Players.Max(p => p.Id);
+        }
+
         public int Legalabb10K()
         {
             return _playersContext.Players.Where(p => p.Amount >= 10000).Count();

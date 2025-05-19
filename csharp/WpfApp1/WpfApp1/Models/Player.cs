@@ -23,12 +23,17 @@ public partial class Player
         this.Id = id;
     }
 
-    public Player()
+    public Player(int id)
     {
-        Id = null;
+        Id = id;
         Name = null;
         Email = null;
         Amount = null;
+    }
+
+    public Player()
+    {
+        
     }
 
     public bool HasAmount()

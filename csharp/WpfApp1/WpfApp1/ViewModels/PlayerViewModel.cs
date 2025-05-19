@@ -40,7 +40,7 @@ namespace WpfApp1.ViewModels
         [RelayCommand]
         public void Nullaz()
         {
-            CurrentPlayer = new Player();
+            CurrentPlayer = new Player(_repo.NextId());
         }
 
         [RelayCommand]
@@ -48,8 +48,16 @@ namespace WpfApp1.ViewModels
         {
             if(CurrentPlayer != null && !string.IsNullOrEmpty(CurrentPlayer.Name) && CurrentPlayer.Amount>=0)
             {
-                await _repo.EditPlayer(CurrentPlayer);
-                await Update();
+                try
+                {
+                    await _repo.EditPlayer(CurrentPlayer);
+                    await Update();
+                }
+                catch
+                {
+
+                }
+
             }
         }
 
@@ -58,8 +66,16 @@ namespace WpfApp1.ViewModels
         {
             if (CurrentPlayer != null && !string.IsNullOrEmpty(CurrentPlayer.Name) && CurrentPlayer.Amount >= 0)
             {
-                await _repo.AddPlayer(CurrentPlayer);
-                await Update();
+                try
+                {
+                    await _repo.AddPlayer(CurrentPlayer);
+                    await Update();
+                }
+                catch
+                {
+
+                }
+
             }
         }
 
