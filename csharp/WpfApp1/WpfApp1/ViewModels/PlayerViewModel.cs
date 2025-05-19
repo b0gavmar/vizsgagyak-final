@@ -16,6 +16,7 @@ namespace WpfApp1.ViewModels
         public PlayerViewModel(PlayerRepo repo)
         {
             _repo = repo;
+            Update();
         }
 
         public void Update()

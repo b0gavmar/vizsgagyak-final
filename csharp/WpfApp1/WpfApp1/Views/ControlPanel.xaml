@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:WpfApp1.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock>adsa</TextBlock>
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="{Binding NoMoney}"></TextBlock>
+        <TextBlock Text="{Binding Legalabb10k}"></TextBlock>
+        <TextBlock Text="{Binding OsszOsszeg}"></TextBlock>
+    </StackPanel>
 </UserControl>

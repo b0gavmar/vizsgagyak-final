@@ -16,6 +16,11 @@ namespace ConsoleApp1.Repos
             return _playersContext.Players.Where(p=>p.Amount > 0).ToList();
         }
 
+        public List<Player> GetNumberOfPlayersWithoutAmount()
+        {
+            return _playersContext.Players.Where(p => p.Amount == 0).ToList();
+        }
+
         public int GetSumOfAllAmount()
         {
             return _playersContext.Players.Sum(p => p.Amount);
@@ -32,6 +37,11 @@ namespace ConsoleApp1.Repos
             {
                 throw new Exception("Már van ilyen id");
             }
+        }
+
+        public int Legalabb10K()
+        {
+            return _playersContext.Players.Where(p => p.Amount >= 10000).Count();
         }
     }
 }
