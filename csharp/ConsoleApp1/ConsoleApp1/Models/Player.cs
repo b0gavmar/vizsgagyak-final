@@ -11,12 +11,12 @@ public partial class Player
 
     public string Email { get; set; }
 
-    private int Amount { get; set; }
+    public int Amount { get; set; }
 
     public Player(string name, string email, int amount = 0, int? id = null)
     {
-        if(string.IsNullOrEmpty(name)) throw new ArgumentNullException("Hiányzik a név!");
-        if(string.IsNullOrEmpty(email)) throw new ArgumentNullException("Hiányzik az email!");
+        if(string.IsNullOrEmpty(name)) throw new ArgumentException("Hiányzik a név!");
+        if(string.IsNullOrEmpty(email)) throw new ArgumentException("Hiányzik az email!");
         if (!email.Contains("@")) throw new ArgumentException("Nem megfelelő email formátum!");
         this.Name = name;
         this.Email = email;
