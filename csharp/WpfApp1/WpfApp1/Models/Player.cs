@@ -7,11 +7,11 @@ public partial class Player
 {
     public int? Id { get; set; }
 
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     public string? Email { get; set; }
 
-    public int Amount { get; set; }
+    public int? Amount { get; set; }
 
     public Player(string name,  int amount = 0, int? id = null, string? email = null)
     {
@@ -21,6 +21,14 @@ public partial class Player
         this.Email = email;
         this.Amount = amount;
         this.Id = id;
+    }
+
+    public Player()
+    {
+        Id = null;
+        Name = null;
+        Email = null;
+        Amount = null;
     }
 
     public bool HasAmount()
@@ -69,5 +77,10 @@ public partial class Player
         {
             throw new ArgumentException("Nincs elég összeg");
         }
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} - {Amount} - ({Email}) - {Id}";
     }
 }
